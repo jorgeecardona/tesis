@@ -11,7 +11,7 @@
 # You should have received a copy of the GNU General Public License    
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from sympy import *
+from sympy import Symbol, var, Function, zeros, nsolve
 
 def Symbolic_Matrix(name,size):
     M = zeros(size)
@@ -20,7 +20,7 @@ def Symbolic_Matrix(name,size):
             M[i,j] = Symbol("%s[%i,%i]"%(name,i,j))
     return M
 
-class Linear:
+class linear:
 
     def parameters(self, s):
         return map(lambda x: var("p.%s"%(x)), s.split(" "))
