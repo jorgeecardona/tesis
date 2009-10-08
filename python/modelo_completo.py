@@ -1,6 +1,6 @@
 from linear import linear
 from sympy import *
-#from L import calcular_L
+from luenberger import luenberger
 
 
 # Define global parameters
@@ -86,34 +86,11 @@ print "A=\n", A
 print "B=\n", B
 print "C=\n", C
 
-# print latex(A)
-# print latex(B)
-# print latex(C)
+K1, K2, K3 = luenberger(A,C,[
+        [-0.5 + 1.0*I, -0.5 - 1.0*I, -2.5],
+        [-2.5 + 5.0*I, -2.5 - 5.0*I, -12.5],
+        [-12.5 + 25.0*I, -12.5 - 25.0*I, -62.5]])
 
-
-# Raices = []
-# Raices.append([-0.5 + 1.0*I, -0.5 - 1.0*I, -2.5])
-# Raices.append([-2.5 + 5.0*I, -2.5 - 5.0*I, -12.5])
-# Raices.append([-12.5 + 25.0*I, -12.5 - 25.0*I, -62.5])
-
-# for Raiz in Raices:
-
-#     L =  calcular_L(A,C,Raiz)
-
-#     print "*********************   R   **********************"
-#     print Raiz
-
-#     print "*********************   L   **********************"
-#     print latex(L.evalf())
-
-#     print "*********************   A   **********************"
-#     print A.evalf()
-
-#     print "*********************   B   **********************"
-#     print B.row_join(L).evalf()
-
-#     print "*********************   C   **********************"
-#     print C.evalf()
-
-#     print "******************** SCICOS  *********************"
-
+print "K1=\n",K1
+print "K2=\n",K2
+print "K3=\n",K3
