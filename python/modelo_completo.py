@@ -1,5 +1,5 @@
-from linear import linear
 from sympy import *
+from linear import linear
 from luenberger import luenberger
 
 
