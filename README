@@ -1,0 +1,5 @@
+En este repositorio se encuentran los codigos desarrollados por Jorge Eduardo Cardona Gaviria en el desarrollo de su tesis de pregrado "Diseño e Implementacion de un observador de estados para la tension en un cabezote textil".
+
+En la carpeta "python" se encuentran los programas desarrollados en el lenguaje Python para la obtencion de las linealizaciones de los modelos, y los parametros que caracterizan los observadores de Luenberger, Filtro Extendido de Kalma, y de Alta Ganancia.
+
+En la carpeta "modelica" se encuentran los programas desarrollados en el lenguaje Modelica, y unos programas auxiliares en Python, para la simulacion de los sistemas, la identificacion de los parametros y la simulacion de los observadores.
