@@ -1,7 +1,7 @@
 from linear import linear, Symbolic_Matrix
 from sympy import *
 from luenberger import luenberger
-
+from kalman import kalman
 
 # Define global parameters
 m_1     = 0.5     # Masa de la polea
@@ -94,63 +94,8 @@ K = luenberger(A, C, [-10 + 4 * I, -10 - 4 * I, -10])
 
 print "K = \n", K
 
-# # print latex(A)
-# # print latex(B)
-# # print latex(C)
+V_2 = Matrix([1e-2])
+V_1 = kalman(A, C, K, V_2)
 
-# raices = []
-# from sympy import I
-# raices.append([-1 + 1*I, -1 - 1*I, -2])
-# raices.append([-2 + 2*I, -2 - 2*I, -4])
-# raices.append([-4 + 4*I, -4 - 4*I, -6])
-# raices.append([-6 + 6*I, -6 - 6*I, -8])
-# raices.append([-7 + 7*I, -7 - 7*I, -9])
-# raices.append([-8 + 4*I, -8 - 4*I, -10])
-# raices.append([-10 + 4*I, -10 - 4*I, -10])
-
-# # for Raiz in Raices:
-
-# #     L =  calcular_L(A,C,Raiz)
-
-# #     print "*********************   R   **********************"
-# #     print Raiz
-
-# #     print "*********************   L   **********************"
-# #     print latex(L.evalf())
-
-# #     print "*********************   A   **********************"
-# #     print A.evalf()
-
-# #     print "*********************   B   **********************"
-# #     print B.row_join(L).evalf()
-
-# #     print "*********************   C   **********************"
-# #     print C.evalf()
-
-# #     print "******************** SCICOS  *********************"
-
-# from luenberger import luenberger
-
-# for K in [luenberger(A, C, r) for r in raices]:
-
-#     print "K = \n[%s];"%(" ; ".join([str(k) for k in K]))
-
-#     P_sym = Symbolic_Matrix("p",(3,3))
-
-#     V2 = matrices.Matrix([1e-2])
-
-#     res = solvers.solve(tuple((P_sym * C.transpose() * V2.inv() - K).mat), P_sym.mat)
-
-#     P = zeros(P_sym.shape)
-#     P.mat = [p if not p in res else res[p] for p in P_sym.mat]
-
-#     V1 = - (P * A.transpose() + A * P - P * C.transpose() * V2.inv() * C * P)
-    
-#     res = solvers.solve(tuple([V1[i,j] - V1[j,i] for i in xrange(3) for j in xrange(3) if i < j] + [V1[0,1], V1[0,2], V1[1,2]]), P_sym.mat)
-
-#     P.mat = [p if not p in res else res[p] for p in P.mat]
-#     V1 = - (P * A.transpose() + A * P - P * C.transpose() * V2.inv() * C * P)
-    
-
-#     print "V_1 = \n[%s];"%" ;\n".join([",\t".join(str(V1[i,j]) for i in xrange(V1.cols)) for j in xrange(V1.lines)])
-#     print "V_2 = \n[%s];"%" ;\n".join([",\t".join(str(V2[i,j]) for i in xrange(V2.cols)) for j in xrange(V2.lines)])
+print "V_1 = \n", V_1
+print "V_2 = \n", V_2
