@@ -2,8 +2,6 @@
 
 ## Jorge Eduardo Cardona Gaviria
 
-## Trabajo de grado para optar al título de Ingeniero Electrónico.
-
 ## [Universidad Pontificia Bolivariana](http://www.upb.edu.co/)
 
 En la carpeta "python" se encuentran los programas desarrollados en el lenguaje Python para la obtencion de las linealizaciones de los modelos, y los parametros que caracterizan los observadores de Luenberger, Filtro de Kalman Extendido, y de Alta Ganancia.
