@@ -89,6 +89,10 @@ print "A=\n", A
 print "B=\n", B
 print "C=\n", C
 
+from sympy import I
+K = luenberger(A, C, [-10 + 4 * I, -10 - 4 * I, -10])
+
+print "K = \n", K
 
 # # print latex(A)
 # # print latex(B)
