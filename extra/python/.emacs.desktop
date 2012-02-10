@@ -1,0 +1,127 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Wed May 12 09:06:28 2010
+;; Desktop file format version 206
+;; Emacs version 23.1.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/tesis/python/modelo_completo.py"
+  "modelo_completo.py"
+  'python-mode
+  '(auto-complete-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/python/Linealizacion/Modelo_Completo_Cinta_Blanca.py"
+  "Modelo_Completo_Cinta_Blanca.py<2>"
+  'python-mode
+  '(auto-complete-mode)
+  1
+  '(3221 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/python/HG/Modelo_Completo_Cinta_Blanca.py"
+  "Modelo_Completo_Cinta_Blanca.py"
+  'python-mode
+  '(auto-complete-mode)
+  2219
+  '(312 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/python/Linealizacion/linear.py"
+  "linear.py"
+  'python-mode
+  '(auto-complete-mode)
+  1984
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/python/HG/HG.py"
+  "HG.py"
+  'python-mode
+  '(auto-complete-mode)
+  282
+  '(2210 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/python/Linealizacion/KF.py"
+  "KF.py"
+  'python-mode
+  '(auto-complete-mode)
+  24
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/python/Linealizacion/Linear.py"
+  "Linear.py"
+  'python-mode
+  '(auto-complete-mode)
+  1383
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/python/Linealizacion/Modelo_Completo_Validacion.py"
+  "Modelo_Completo_Validacion.py"
+  'python-mode
+  '(auto-complete-mode)
+  1516
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/python/Linealizacion/Modelo_Completo.py"
+  "Modelo_Completo.py"
+  'python-mode
+  '(auto-complete-mode)
+  1575
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/python/bagirov.py"
+  "bagirov.py"
+  'python-mode
+  '(auto-complete-mode)
+  1230
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+

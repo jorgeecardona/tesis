@@ -1,0 +1,127 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Fri Nov 27 16:02:43 2009
+;; Desktop file format version 206
+;; Emacs version 23.1.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("p"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/python/Linealizacion/Modelo_Completo_Validacion.py"
+  "Modelo_Completo_Validacion.py"
+  'python-mode
+  '(auto-complete-mode)
+  487
+  '(885 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/python/Linealizacion/luenberger.py"
+  "luenberger.py"
+  'python-mode
+  '(auto-complete-mode)
+  19
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/python/Linealizacion/Modelo_Simplificado.py"
+  "Modelo_Simplificado.py"
+  'python-mode
+  '(auto-complete-mode)
+  1499
+  '(1 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/python/Linealizacion/linear.py"
+  "linear.py"
+  'python-mode
+  '(auto-complete-mode)
+  877
+  '(2756 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/scripts/Alta_Ganancia/Modelo_Prueba.py"
+  "Modelo_Prueba.py<2>"
+  'python-mode
+  '(auto-complete-mode)
+  553
+  '(132 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/scripts/Alta_Ganancia/HG.py"
+  "HG.py"
+  'python-mode
+  '(auto-complete-mode)
+  680
+  '(1856 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/python/Linealizacion/Modelo_Prueba.py"
+  "Modelo_Prueba.py"
+  'python-mode
+  '(auto-complete-mode)
+  706
+  '(993 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/python/Linealizacion/L.py"
+  "L.py"
+  'python-mode
+  '(auto-complete-mode)
+  66
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "Linealizacion"
+  'dired-mode
+  nil
+  763
+  '(nil nil)
+  t
+  '("/home/jcardona/stuff/personal/tesis/python/Linealizacion/")
+  nil)
+
+(desktop-create-buffer 206
+  "/home/jcardona/stuff/personal/tesis/python/Linealizacion/Linealizacion.py"
+  "Linealizacion.py"
+  'python-mode
+  '(auto-complete-mode)
+  776
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+

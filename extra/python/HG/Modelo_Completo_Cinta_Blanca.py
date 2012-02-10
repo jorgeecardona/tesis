@@ -1,11 +1,12 @@
-from hg import hg
+from HG import HG, calcular_H
 from sympy import *
 
 
 # Create a linear object
-sys = hg()
+sys = HG()
 
 # Define global parameters
+#m_1, m, Y, A, l_1, l_2, l_3, l_4, l_5, r, k_f, L_k, rho_o, rho_e, g, I, l_1_, theta_ = sys.parameters("m_1 m Y*1e6 A l_1 l_2 l_3 l_4 l_5 r k_f/10 L_k rho_o*1000 rho_e*1000 g I/100 l_1_ theta_")
 m_1, m, Y, A, l_1, l_2, l_3, l_4, l_5, r, k_f, L_k, rho_o, rho_e, g, I, l_1_, theta_ = sys.parameters("m_1 m Y A l_1 l_2 l_3 l_4 l_5 r k_f L_k rho_o rho_e 9.8 I l_1_ theta_")
 
 # Define the sizes of the state and the input
@@ -22,6 +23,7 @@ def T(rho):
 
 def rho(L,M):
     return M /(A * L)
+
 
 # Define functions that can't be defined as functions above, i.e.
 # f(y,x_1,x_2,x_3,...,x_n) = g(y,x_1,x_2,x_3,...,x_n)
@@ -61,6 +63,7 @@ sys.g(Matrix(
          [0,0],
          [A * r * rho_e , - A * r * h(x[0], x[2])]]))
 
+
 # Output function
 sys.h(Matrix([x[0]]))
 
@@ -75,9 +78,9 @@ print "Jacobiano="
 print(J)
 print "\n\n"
 
-print "Inversa del Jacobiano="
-print(J_inv)
-print "\n\n"
+# print "Inversa del Jacobiano="
+# print(J_inv)
+# print "\n\n"
 
 print "Para modelica:"
 
@@ -92,4 +95,6 @@ for i in xrange(J.lines):
 
     
 from sympy import I
-print sys.compute_h([-8 + 4 * I,-8 - 4*I,-10])
+pprint(calcular_H([-0.06 + 0.06 * I,-0.06 - 0.06*I,-0.08]))
+pprint(calcular_H([-0.6 + 0.6 * I,-0.6 - 0.6*I,-0.8]))
+pprint(calcular_H([-8 + 4 * I,-8 - 4*I,-10]))

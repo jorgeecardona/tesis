@@ -1,0 +1,5 @@
+loadModel(Modelica)
+loadFile("../test.mo")
+loadFile("../test.mo")
+loadFile("../Test.mo")
+quit()

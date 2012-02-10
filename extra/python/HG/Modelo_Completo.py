@@ -1,12 +1,12 @@
-from hg import hg
+from HG import HG, calcular_H
 from sympy import *
 
 
 # Create a linear object
-sys = hg()
+sys = HG()
 
 # Define global parameters
-m_1, m, Y, A, l_1, l_2, l_3, l_4, l_5, r, k_f, L_k, rho_o, rho_e, g, I, l_1_, theta_ = sys.parameters("m_1 m Y A l_1 l_2 l_3 l_4 l_5 r k_f L_k rho_o rho_e 9.8 I l_1_ theta_")
+m_1, m_2, Y, A, l_1, l_2, l_3, l_4, r, k_f, L_k, rho_o, rho_e, g, I = sys.parameters("m_1 m_2 Y A l_1 l_2 l_3 l_4 r k_f L_k rho_o rho_e g I")
 
 # Define the sizes of the state and the input
 x = sys.state(3)
@@ -15,7 +15,7 @@ u = sys.input(2)
 # Define global functions that can be defined in an explicit way, i.e.
 # y = f(x_1,x_2,...x_n) \forall n \in N and x_i \notequal y
 def L(beta_1, beta_2, theta):
-    return L_k + 2 * r * (beta_1 + 1/tan(beta_1) + beta_2 + 1/tan(beta_2)) + (1/sin(beta_1) + 1/sin(beta_2)) * (l_4 - l_1_ * sin(theta + theta_))
+    return L_k + 2 * r * (beta_1 + 1/tan(beta_1) + beta_2 + 1/tan(beta_2)) + (1/sin(beta_1) + 1/sin(beta_2)) * (l_4 - l_1 * sin(theta))
 
 def T(rho):
     return Y * A * (rho_o /rho - 1)
@@ -33,33 +33,28 @@ def rho(L,M):
 beta_1 = sys.function(
     "beta_1",
     lambda y,x: (l_3 - l_2) * sin(y) - l_4 * cos(y), # f(y, x_1, x_2, x_3. ... , x_n)
-    lambda y,x: -l_1_ * sin(y + x + theta_) + 2 * r, # g(y, x_1, x_2, x_3, ... , x_n)
+    lambda y,x: -l_1 * sin(y + x) + 2 * r, # g(y, x_1, x_2, x_3, ... , x_n)
     [(x[0],)]
     )
 
 beta_2 = sys.function(
     "beta_2",
     lambda y,x: l_2 * sin(y) - l_4 * cos(y), # f(y, x_1, x_2, x_3. ... , x_n)
-    lambda y,x: l_1_ * sin(y - x - theta_) + 2 * r, # g(y, x_1, x_2, x_3, ... , x_n)
+    lambda y,x: l_1 * sin(y - x) + 2 * r, # g(y, x_1, x_2, x_3, ... , x_n)
     [(x[0],)]
     )
 
-f = lambda theta, M: T(rho(L(beta_1(theta),beta_2(theta),theta),M)) * (sin(theta + theta_ + beta_1(theta)) - sin(theta + theta_ - beta_2(theta)))
+f = lambda theta, M: T(rho(L(beta_1(theta),beta_2(theta),theta),M)) * (sin(theta + beta_1(theta)) - sin(theta - beta_2(theta)))
 
 h = lambda theta, M: rho(L(beta_1(theta), beta_2(theta), theta), M)
 
 # State function
 sys.f(Matrix(
         [x[1],
-         (l_1_ * f(x[0],x[2]) - l_1_ * m * g * cos(x[0] + theta_) - k_f * x[1]) / (I + l_1_**2 * m_1),
-         0
+         (l_1 * f(x[0],x[2]) - l_1 * (m_1 + m_2) * g * cos(x[0]) - k_f * x[1]) / (I + l_1 * m_1 * r),
+         A * r * (rho_e * u[0] - h(x[0],x[2]) * u[1])
          ])
       )
-
-sys.g(Matrix(
-        [[0,0],
-         [0,0],
-         [A * r * rho_e , - A * r * h(x[0], x[2])]]))
 
 # Output function
 sys.h(Matrix([x[0]]))
@@ -83,13 +78,12 @@ print "Para modelica:"
 
 for i in xrange(J_inv.lines):
     for j in xrange(J_inv.cols):
-        print "    Jac_inv[%d,%d] = "%(i+1,j+1),str(J_inv[i,j]).replace("beta_1(X_e[1,1])", "core.beta_1_aux").replace("beta_2(X_e[1,1])", "beta_2").replace("**", "^"), ";"
-
-for i in xrange(J.lines):
-    for j in xrange(J.cols):
-        print "    Jac[%d,%d] = "%(i+1,j+1),str(J[i,j]).replace("beta_1(X_e[1,1])", "beta_1").replace("beta_2(X_e[1,1])", "beta_2").replace("**", "^"), ";"
-
-
+        print "Jac_inv[%d,%d] = "%(i+1,j+1),J_inv[i,j],";"
     
-from sympy import I
-print sys.compute_h([-8 + 4 * I,-8 - 4*I,-10])
+
+
+I   = 0.023
+pprint(calcular_H([-0.2+0.4*I,-0.2-0.4*I,-1]))
+pprint(calcular_H([-2+4*I,-2-4*I,-10]))
+pprint(calcular_H([-20+40*I,-20-40*I,-100]))
+pprint(calcular_H([-200+400*I,-200-400*I,-1000]))
